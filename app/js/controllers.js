@@ -2,23 +2,33 @@
 
 /* Controllers */
 
-function PhoneListCtrl($scope, Phone) {
-  $scope.phones = Phone.query();
+function MedalListCtrl($scope, Medal) {
+  $scope.medals = Medal.query();
   $scope.orderProp = 'age';
 }
 
-//PhoneListCtrl.$inject = ['$scope', 'Phone'];
 
-
-
-function PhoneDetailCtrl($scope, $routeParams, Phone) {
-  $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-    $scope.mainImageUrl = phone.images[0];
-  });
-
+function MedalDetailCtrl($scope, $routeParams, Medal) {
+  $scope.medal = Medal.get({medalId: $routeParams.medalId}, function(medal) {
+    $scope.mainImageUrl = medal.images[0];
+});
   $scope.setImage = function(imageUrl) {
     $scope.mainImageUrl = imageUrl;
   }
 }
 
-//PhoneDetailCtrl.$inject = ['$scope', '$routeParams', 'Phone'];
+function UserListCtrl($scope, User) {
+  $scope.users = Medal.query();
+  $scope.orderProp = 'name';
+}
+
+
+function UserDetailCtrl($scope, $routeParams, User) {
+  $scope.user = User.get({userId: $routeParams.userId}, function(user) {
+    $scope.mainImageUrl = user.images[0];
+});
+
+  $scope.setImage = function(imageUrl) {
+    $scope.mainImageUrl = imageUrl;
+  }
+}

@@ -14,11 +14,11 @@
     <div class="span10">
       <!--Body content-->
 
-      <ul class="phones">
-        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
+      <ul class="medals">
+        <li ng-repeat="medal in medals | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/json/medals/{{medal.id}}" class="thumb"><img ng-src="{{medal.imageUrl}}"></a>
+          <a href="#/json/medals/{{medal.id}}">{{medal.name}}</a>
+          <p>{{medal.snippet}}</p>
         </li>
       </ul>
 
