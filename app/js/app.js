@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('app', ['planetwar-medals','planetwar-users']);
+/*angular.module('app', ['planetwar-medals','planetwar-users']);
 
 
 angular.module('planetwar-medals', ['medalFilters', 'medalServices']).
@@ -19,14 +19,16 @@ angular.module('planetwar-users', ['userFilters', 'userServices']).
    	  .when('json/users', {templateUrl: 'partials/user-list.html', controller: UserListCtrl})
       .when('json/users/:userId', {templateUrl: 'partials/user-detail.html', controller: UserDetailCtrl}).
       otherwise({redirectTo: 'json/users'});
-}]);
+}]);*/
 
-angular.module('planetarywarfare', []).
+angular.module('planetarywarfare', ['userFilters', 'userServices', 'medalFilters', 'medalServices']).
   config(['$routeProvider', function($routeProvider){
     $routeProvider
-      .when('/users/list', {templateUrl: 'partials/user-list.html', controller: UserListCtrl})
-      .when('/json/users/)
-  })
+      .when('users/list', {templateUrl: 'partials/user-list.html', controller: UserListCtrl})
+      .when('json/users', {templateUrl: 'partials/user-detail.html', controller: UserDetailCtrl})
+      when('/medals/list', {templateUrl: 'partials/medal-list.html',   controller: MedalListCtrl}).
+      when('/json/medals', {templateUrl: 'partials/medal-detail.html', controller: MedalDetailCtrl})}]);
+  }]);
 
 /*angular.bootstrap(document.getElementById("medalsDiv"), ["planetwar-medals"]);
 angular.bootstrap(document.getElementById("usersDiv"), ["planetwar-users"]);*/
